@@ -181,8 +181,8 @@ struct OngkirManager {
             print(error!)
           }; if let safeData = data {
             if let harga = self.parseJsonCost(cityData: safeData) {
-                print(harga)
                 delegate?.updateCost(harga: harga)
+                
                 
 //                self.menyimpan(input: harga)
                 

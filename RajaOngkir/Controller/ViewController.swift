@@ -20,9 +20,9 @@ class ViewController: UIViewController , UITextFieldDelegate {
     
     var ongkirManager = OngkirManager()
     
-    var provinceId = [String]()
+    var provinceId = [Province]()
     var selectedProvince = ""
-    var provinceIdDestination = [String]()
+    var provinceIdDestination = [Province]()
     var selectedProvinceDestination = ""
     var value = [String]()
     
@@ -94,11 +94,12 @@ class ViewController: UIViewController , UITextFieldDelegate {
     
     @IBAction func pilihProvinsiPressed(_ sender: Any)  {
         provinsiAsal.show()
+
         provinsiAsal.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             pilihProvinsi.setTitle(item, for: .normal)
             
-            selectedProvince = provinceId[index]
+            selectedProvince = provinceId[index].province_id
             DispatchQueue.main.async {
                 self.ongkirManager.fetchCity(provinceId: selectedProvince)
             }
@@ -133,7 +134,7 @@ class ViewController: UIViewController , UITextFieldDelegate {
             print("Selected item: \(item) at index: \(index)")
             pilihProvinsiTujuan.setTitle(item, for: .normal)
             
-            selectedProvinceDestination = provinceIdDestination[index]
+            selectedProvinceDestination = provinceIdDestination[index].province_id
             DispatchQueue.main.async {
                 self.ongkirManager.fetchCityDestination(provinceIdDestination: selectedProvinceDestination)
                 
@@ -224,19 +225,21 @@ extension ViewController: OngkirManagerDelegate {
                 self.provinsiAsal.dataSource.append(Province.province)
                 self.provinsiTujuan.dataSource.append(Province.province)
                 
-                self.provinceId.append(Province.province_id)
-                self.provinceIdDestination.append(Province.province_id)
+              
                 
                 
             }
             
             
         }
+        self.provinceId.append(contentsOf: ongkir)
+        self.provinceIdDestination.append(contentsOf: ongkir)
         
     }
     
     func updateCity(ongkir: [Province2]) {
         kotaAsal.dataSource.removeAll()
+        origin.removeAll()
         DispatchQueue.main.async {
             ongkir.forEach { (Province) in
                 self.kotaAsal.dataSource.append(Province.city_name)
@@ -249,6 +252,8 @@ extension ViewController: OngkirManagerDelegate {
     
     func updateCityDestination(ongkir: [Province2]) {
         kotaTujuan.dataSource.removeAll()
+        destination.removeAll()
+
         DispatchQueue.main.async {
             ongkir.forEach { (Province) in
                 self.kotaTujuan.dataSource.append(Province.city_name)
