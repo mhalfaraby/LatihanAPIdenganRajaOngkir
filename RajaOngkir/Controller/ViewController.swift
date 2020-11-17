@@ -7,6 +7,7 @@
 
 import UIKit
 import DropDown
+import Keyboardy
 class ViewController: UIViewController , UITextFieldDelegate {
     
     
@@ -46,6 +47,7 @@ class ViewController: UIViewController , UITextFieldDelegate {
     
     
     
+    @IBOutlet weak var keyboard: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +59,7 @@ class ViewController: UIViewController , UITextFieldDelegate {
         kotaTujuan.anchorView = pilihKotaTujuan
         kotaTujuan.direction = .bottom
         kurir.anchorView = pilihKurir
-        
+        kurir.dataSource = ongkirManager.dataKurir
         inputBerat.delegate = self
         
         
@@ -68,6 +70,16 @@ class ViewController: UIViewController , UITextFieldDelegate {
         
         
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        registerForKeyboardNotifications(self)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        unregisterFromKeyboardNotifications()
     }
     
     @IBAction func pilihProvinsiPressed(_ sender: Any)  {
@@ -145,7 +157,7 @@ class ViewController: UIViewController , UITextFieldDelegate {
     @IBAction func pilihKurirPressed(_ sender: Any) {
         
         kurir.show()
-        kurir.dataSource = ["JNE", "TIKI" , "POS"]
+        
         kurir.selectionAction = {  (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             self.pilihKurir.setTitle(item, for: .normal)
@@ -201,4 +213,27 @@ extension ViewController: OngkirManagerDelegate {
     
     
 }
+extension ViewController: KeyboardStateDelegate {
+
+    func keyboardWillTransition(_ state: KeyboardState) {
+        // keyboard will show or hide
+    }
+
+    func keyboardTransitionAnimation(_ state: KeyboardState) {
+        switch state {
+        case .activeWithHeight(let height):
+            keyboard.constant = height
+        case .hidden:
+            keyboard.constant = 0.0
+        }
+
+        view.layoutIfNeeded()
+    }
+
+    func keyboardDidTransition(_ state: KeyboardState) {
+        // keyboard animation finished
+    }
+}
+
+
 

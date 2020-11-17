@@ -116,6 +116,7 @@
                     <connections>
                         <outlet property="cekOngkosKirim" destination="YFB-ym-Yo8" id="DI1-nF-V7W"/>
                         <outlet property="inputBerat" destination="M9E-td-mFq" id="aSh-Jw-YtU"/>
+                        <outlet property="keyboard" destination="3vg-BP-AMM" id="QP5-bo-uDD"/>
                         <outlet property="labelAsal" destination="AmM-cj-JrH" id="voF-Pr-f1A"/>
                         <outlet property="labelTujuan" destination="XAi-lp-23G" id="oVk-Hh-idb"/>
                         <outlet property="pilihKota" destination="zuM-0K-K4u" id="Yco-s8-4qA"/>

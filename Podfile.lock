@@ -1,16 +1,20 @@
 PODS:
   - DropDown (2.3.13)
+  - Keyboardy (0.2.7)
 
 DEPENDENCIES:
   - DropDown
+  - Keyboardy
 
 SPEC REPOS:
   trunk:
     - DropDown
+    - Keyboardy
 
 SPEC CHECKSUMS:
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Keyboardy: 5fee785baf2bc8fa95896a31d88b5f49488f839e
 
-PODFILE CHECKSUM: 06eea1f61cfba8cd076cc02e929c5937fc810489
+PODFILE CHECKSUM: d891b425ff75d2b40c4b82936d302c1185cd5138
 
 COCOAPODS: 1.10.0
