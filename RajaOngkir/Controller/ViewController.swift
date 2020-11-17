@@ -24,7 +24,17 @@ class ViewController: UIViewController , UITextFieldDelegate {
     var selectedProvince = ""
     var provinceIdDestination = [String]()
     var selectedProvinceDestination = ""
+    var value = [String]()
+    
+    var origin = [Province2]()
+    var destination = [Province2]()
+
+
+    var originSelected = ""
+    var destinationSelected = ""
     var gram = ""
+    var kurirSelected = ""
+    
     
     
     @IBOutlet weak var labelAsal: UILabel!
@@ -105,6 +115,11 @@ class ViewController: UIViewController , UITextFieldDelegate {
             print("Selected item: \(item) at index: \(index)")
             pilihKota.setTitle(item, for: .normal)
             
+            originSelected = origin[index].city_id
+            
+            print(originSelected)
+            
+            
         }
         
         
@@ -134,7 +149,9 @@ class ViewController: UIViewController , UITextFieldDelegate {
         kotaTujuan.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             pilihKotaTujuan.setTitle(item, for: .normal)
+            destinationSelected = destination[index].city_id
             
+            print(destinationSelected)
         }
     }
     
@@ -145,10 +162,20 @@ class ViewController: UIViewController , UITextFieldDelegate {
         self.inputBerat.endEditing(true)
         print(self.inputBerat.text!)
         self.gram = self.inputBerat.text!
+        
+        print(gram)
         return true
     }
     
-    
+/*
+     gue mau ngapain coba
+     
+     mau simpan value
+     
+     origin: String, destination: String , weight: String ,courier: String
+     
+     ketika button cekongkoskirim di pencet maka
+     */
     
     
     
@@ -161,18 +188,34 @@ class ViewController: UIViewController , UITextFieldDelegate {
         kurir.selectionAction = {  (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             self.pilihKurir.setTitle(item, for: .normal)
-
+            self.kurirSelected = item
+            
+            print(self.kurirSelected)
             
             
         }
         
     }
     
+    @IBAction func cekOngkosKirimPressed(_ sender: Any) {
+  print(originSelected)
+        print(destinationSelected)
+        print(gram)
+        print(kurirSelected)
+        ongkirManager.fetchCost(origin: originSelected, destination: destinationSelected, weight: gram, courier: kurirSelected)
+    }
     
 }
 
 
 extension ViewController: OngkirManagerDelegate {
+    func updateCost(harga: [Costs]) {
+        print(harga[0])
+    }
+    
+   
+  
+    
     
     func updateProvince(ongkir: [Province]) {
         provinsiAsal.dataSource.removeAll()
@@ -197,8 +240,11 @@ extension ViewController: OngkirManagerDelegate {
         DispatchQueue.main.async {
             ongkir.forEach { (Province) in
                 self.kotaAsal.dataSource.append(Province.city_name)
+                
             }
         }
+        
+        origin.append(contentsOf: ongkir)
     }
     
     func updateCityDestination(ongkir: [Province2]) {
@@ -209,7 +255,14 @@ extension ViewController: OngkirManagerDelegate {
                 
             }
         }
+        
+        destination.append(contentsOf: ongkir)
     }
+    
+  
+    
+    
+    
     
     
 }

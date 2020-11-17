@@ -35,3 +35,31 @@ struct Province2: Decodable {
     let city_name: String
     let city_id: String
 }
+
+struct Harga: Decodable {
+    let rajaongkir: Result3
+}
+
+struct Result3: Decodable {
+    let results: [Costs]
+}
+
+struct Costs: Decodable {
+    let code: String
+    let name: String
+    let costs: [Cost]
+}
+
+struct Cost: Decodable {
+    let service: String
+    let description: String
+    let cost: [Value]
+}
+
+struct Value: Decodable {
+    let value: Int
+    let etd: String
+    let note: String
+}
+
+
