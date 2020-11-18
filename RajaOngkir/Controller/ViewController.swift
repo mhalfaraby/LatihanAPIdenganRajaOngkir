@@ -158,7 +158,7 @@ class ViewController: UIViewController , UITextFieldDelegate {
         
         kurir.selectionAction = {  (index: Int, item: String) in
             self.pilihKurir.setTitle(item, for: .normal)
-            self.kurirSelected = item
+            self.kurirSelected = item.lowercased()
             
             
             
@@ -176,7 +176,7 @@ class ViewController: UIViewController , UITextFieldDelegate {
         
         ongkirManager.fetchCost(origin: originSelected, destination: destinationSelected, weight: self.gram, courier: self.kurirSelected)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) { // Change `2.0` to the desired number of seconds.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) { // Change `2.0` to the desired number of seconds.
             // Code you want to be delayed
             self.performSegue(withIdentifier: "goToDetail", sender: self)
             

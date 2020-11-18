@@ -21,7 +21,7 @@ struct OngkirManager {
     //    var provinsiAwalArray = [String]()
     var delegate: OngkirManagerDelegate?
     
-    var dataKurir = ["jne", "tiki" , "pos"]
+    var dataKurir = ["JNE", "TIKI" , "POS"]
     
     func fetch() {
         
