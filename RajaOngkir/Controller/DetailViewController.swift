@@ -9,7 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
+   
     
     var hargaAkhir2 = [Costs]()
     
@@ -46,11 +46,11 @@ extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath) as? DetailTableViewCell {
             
-           
-                cell.namaKurir.text = String(hargaAkhir2[i].costs[0].cost[0].value)
+         
+            cell.namaKurir.text = String(hargaAkhir2[0].costs[indexPath.row].cost[0].value)
 
          
-         
+
                 
             return cell
         } else {
