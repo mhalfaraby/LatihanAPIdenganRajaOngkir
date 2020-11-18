@@ -13,6 +13,9 @@
 		572AA576255FA22400C0B008 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572AA574255FA22400C0B008 /* Main.storyboard */; };
 		572AA578255FA22500C0B008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572AA577255FA22500C0B008 /* Assets.xcassets */; };
 		572AA57B255FA22500C0B008 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 572AA579255FA22500C0B008 /* LaunchScreen.storyboard */; };
+		579B5EF525643F95003F3CD3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B5EF425643F95003F3CD3 /* DetailViewController.swift */; };
+		579B5EF925643FC0003F3CD3 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579B5EF725643FC0003F3CD3 /* DetailTableViewCell.swift */; };
+		579B5EFA25643FC0003F3CD3 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 579B5EF825643FC0003F3CD3 /* DetailTableViewCell.xib */; };
 		57C2DEAE2562634E004A5358 /* OngkirManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2DEAD2562634E004A5358 /* OngkirManager.swift */; };
 		57C2DEB125626524004A5358 /* Ongkir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C2DEB025626524004A5358 /* Ongkir.swift */; };
 		EC2963C3BDF5A721E94FA991 /* Pods_RajaOngkir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809ED884FD39C72156958371 /* Pods_RajaOngkir.framework */; };
@@ -29,6 +32,9 @@
 		572AA577255FA22500C0B008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		572AA57A255FA22500C0B008 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		572AA57C255FA22500C0B008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		579B5EF425643F95003F3CD3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		579B5EF725643FC0003F3CD3 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		579B5EF825643FC0003F3CD3 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		57C2DEAD2562634E004A5358 /* OngkirManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OngkirManager.swift; sourceTree = "<group>"; };
 		57C2DEB025626524004A5358 /* Ongkir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ongkir.swift; sourceTree = "<group>"; };
 		809ED884FD39C72156958371 /* Pods_RajaOngkir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RajaOngkir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +98,8 @@
 				572AA574255FA22400C0B008 /* Main.storyboard */,
 				572AA56E255FA22400C0B008 /* AppDelegate.swift */,
 				572AA570255FA22400C0B008 /* SceneDelegate.swift */,
+				579B5EF725643FC0003F3CD3 /* DetailTableViewCell.swift */,
+				579B5EF825643FC0003F3CD3 /* DetailTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -100,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				572AA572255FA22400C0B008 /* ViewController.swift */,
+				579B5EF425643F95003F3CD3 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,6 +191,7 @@
 			files = (
 				572AA57B255FA22500C0B008 /* LaunchScreen.storyboard in Resources */,
 				572AA578255FA22500C0B008 /* Assets.xcassets in Resources */,
+				579B5EFA25643FC0003F3CD3 /* DetailTableViewCell.xib in Resources */,
 				572AA576255FA22400C0B008 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +247,9 @@
 			files = (
 				572AA573255FA22400C0B008 /* ViewController.swift in Sources */,
 				572AA56F255FA22400C0B008 /* AppDelegate.swift in Sources */,
+				579B5EF925643FC0003F3CD3 /* DetailTableViewCell.swift in Sources */,
 				572AA571255FA22400C0B008 /* SceneDelegate.swift in Sources */,
+				579B5EF525643F95003F3CD3 /* DetailViewController.swift in Sources */,
 				57C2DEAE2562634E004A5358 /* OngkirManager.swift in Sources */,
 				57C2DEB125626524004A5358 /* Ongkir.swift in Sources */,
 			);

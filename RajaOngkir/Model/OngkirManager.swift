@@ -13,7 +13,7 @@ protocol OngkirManagerDelegate {
     func updateCity (ongkir: [Province2])
     func updateCityDestination (ongkir: [Province2])
     func updateCost (harga: [Costs])
-
+    
     
 }
 
@@ -25,7 +25,7 @@ struct OngkirManager {
     
     func fetch() {
         
-       
+        
         let headers = ["key": "e1a4a8209e2197008e00a582acac7485"]
         
         let request = NSMutableURLRequest(url: NSURL(string: "https://api.rajaongkir.com/starter/province")! as URL,
@@ -159,44 +159,45 @@ struct OngkirManager {
     func fetchCost(origin: String, destination: String , weight: String ,courier: String) {
         
         let headers = [
-          "key": "e1a4a8209e2197008e00a582acac7485",
-          "content-type": "application/x-www-form-urlencoded"
+            "key": "e1a4a8209e2197008e00a582acac7485",
+            "content-type": "application/x-www-form-urlencoded"
         ]
-
+        
         let postData = NSMutableData(data: "origin=\(origin)".data(using: String.Encoding.utf8)!)
         postData.append("&destination=\(destination)".data(using: String.Encoding.utf8)!)
         postData.append("&weight=\(weight)".data(using: String.Encoding.utf8)!)
         postData.append("&courier=\(courier)".data(using: String.Encoding.utf8)!)
-
+        
         let request = NSMutableURLRequest(url: NSURL(string: "https://api.rajaongkir.com/starter/cost")! as URL,
-                                                cachePolicy: .useProtocolCachePolicy,
-                                            timeoutInterval: 10.0)
+                                          cachePolicy: .useProtocolCachePolicy,
+                                          timeoutInterval: 10.0)
         request.httpMethod = "POST"
         request.allHTTPHeaderFields = headers
         request.httpBody = postData as Data
-
+        
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-          if (error != nil) {
-            print(error!)
-          }; if let safeData = data {
-            if let harga = self.parseJsonCost(cityData: safeData) {
-                delegate?.updateCost(harga: harga)
-                
-                
-//                self.menyimpan(input: harga)
-                
-               
-             
-       
-               
-          }
+            if (error != nil) {
+                print(error!)
+            }; if let safeData = data {
+                if let harga = self.parseJsonCost(cityData: safeData) {
+                    delegate?.updateCost(harga: harga)
+                    
+                    
+                    //                self.menyimpan(input: harga)
+                    
+                    
+                    
+                    
+                    
+                }
+            }
+            
         }
-
-        }
-            )
-
+        )
+        
         dataTask.resume()
+
         
     }
     
@@ -205,7 +206,7 @@ struct OngkirManager {
         do {
             let decodedData = try decoder.decode(Harga.self, from: cityData)
             let cost = decodedData.rajaongkir.results
-
+            
             return cost
         }
         catch {
