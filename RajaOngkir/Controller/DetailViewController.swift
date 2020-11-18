@@ -48,8 +48,8 @@ extension DetailViewController: UITableViewDataSource {
             
          
             cell.namaKurir.text = String(hargaAkhir2[0].costs[indexPath.row].cost[0].value)
-
-         
+            cell.namaCode.text = hargaAkhir2[0].code.uppercased()
+            cell.namaService.text = hargaAkhir2[0].costs[indexPath.row].service.uppercased()
 
                 
             return cell

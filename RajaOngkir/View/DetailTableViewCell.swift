@@ -9,6 +9,9 @@ import UIKit
 
 class DetailTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var namaCode: UILabel!
+    @IBOutlet weak var namaService: UILabel!
+    @IBOutlet weak var rupiah: UILabel!
     @IBOutlet weak var namaKurir: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

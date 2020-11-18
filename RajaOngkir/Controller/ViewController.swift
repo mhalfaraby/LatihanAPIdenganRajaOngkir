@@ -56,7 +56,7 @@ class ViewController: UIViewController , UITextFieldDelegate {
     
     @IBOutlet weak var cekOngkosKirim: UIButton!
     
- 
+    
     @IBOutlet weak var keyboard: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -75,8 +75,8 @@ class ViewController: UIViewController , UITextFieldDelegate {
         
         ongkirManager.delegate = self
         ongkirManager.fetch()
-
-  
+        
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -119,7 +119,7 @@ class ViewController: UIViewController , UITextFieldDelegate {
         
         
     }
-
+    
     @IBAction func pilihProvinsiTujuanPressed(_ sender: Any) {
         provinsiTujuan.show()
         provinsiTujuan.selectionAction = { [unowned self] (index: Int, item: String) in
@@ -144,14 +144,14 @@ class ViewController: UIViewController , UITextFieldDelegate {
             
         }
     }
- 
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {  // << no 10.
         self.inputBerat.endEditing(true)
         self.gram = self.inputBerat.text!
         
         return true
     }
-
+    
     @IBAction func pilihKurirPressed(_ sender: Any) {
         
         kurir.show()
@@ -165,31 +165,31 @@ class ViewController: UIViewController , UITextFieldDelegate {
         }
         
     }
-
+    
     
     @IBAction func cekOngkosKirimPressed(_ sender: Any) {
         print(originSelected)
         print(destinationSelected)
         print(gram)
         print(kurirSelected)
-       
-      
+        
+        
         ongkirManager.fetchCost(origin: originSelected, destination: destinationSelected, weight: self.gram, courier: self.kurirSelected)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { // Change `2.0` to the desired number of seconds.
-           // Code you want to be delayed
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) { // Change `2.0` to the desired number of seconds.
+            // Code you want to be delayed
             self.performSegue(withIdentifier: "goToDetail", sender: self)
-
+            
         }
-      
-
+        
+        
     }
     
-       
-
     
     
-  
+    
+    
+    
     
     
     
@@ -197,9 +197,9 @@ class ViewController: UIViewController , UITextFieldDelegate {
         if segue.identifier == "goToDetail" {
             
             let destinationVC = segue.destination as! DetailViewController
-
-
-                destinationVC.hargaAkhir2 = hargaAkhir
+            
+            
+            destinationVC.hargaAkhir2 = hargaAkhir
             
         }
     }
@@ -213,14 +213,14 @@ extension ViewController: OngkirManagerDelegate {
         hargaAkhir.removeAll()
         hargaAkhir.append(contentsOf: harga)
     }
-
+    
     func updateProvince(ongkir: [Province]) {
         provinsiAsal.dataSource.removeAll()
         DispatchQueue.main.async {
             ongkir.forEach { (Province) in
                 self.provinsiAsal.dataSource.append(Province.province)
                 self.provinsiTujuan.dataSource.append(Province.province)
-       
+                
             }
             
             
@@ -256,7 +256,7 @@ extension ViewController: OngkirManagerDelegate {
         
         destination.append(contentsOf: ongkir)
     }
-
+    
 }
 extension ViewController: KeyboardStateDelegate {
     
