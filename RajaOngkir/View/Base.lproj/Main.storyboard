@@ -20,14 +20,14 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmM-cj-JrH">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="76.5"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfF-FU-kRz">
-                                        <rect key="frame" x="0.0" y="83.5" width="414" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="92.5" width="414" height="77"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Pilih Provinsi">
@@ -38,7 +38,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zuM-0K-K4u">
-                                        <rect key="frame" x="0.0" y="167" width="414" height="67"/>
+                                        <rect key="frame" x="0.0" y="185.5" width="414" height="76.5"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Pilih Kota">
@@ -49,14 +49,14 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tujuan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAi-lp-23G">
-                                        <rect key="frame" x="0.0" y="250" width="414" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="278" width="414" height="76.5"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDB-oF-9ZP">
-                                        <rect key="frame" x="0.0" y="333.5" width="414" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="370.5" width="414" height="77"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Pilih Provinsi">
@@ -67,7 +67,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9l-Af-kPb">
-                                        <rect key="frame" x="0.0" y="417" width="414" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="463.5" width="414" height="76.5"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Pilih Kota">
@@ -78,12 +78,12 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input Berat Dalam Gram" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9E-td-mFq">
-                                        <rect key="frame" x="0.0" y="500.5" width="414" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="556" width="414" height="76.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9J-WL-apO">
-                                        <rect key="frame" x="0.0" y="584" width="414" height="67"/>
+                                        <rect key="frame" x="0.0" y="648.5" width="414" height="77"/>
                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Pilih Kurir">
@@ -94,7 +94,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFB-ym-Yo8">
-                                        <rect key="frame" x="0.0" y="667" width="414" height="67.5"/>
+                                        <rect key="frame" x="0.0" y="741.5" width="414" height="76.5"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Cek Ongkos Kirim">
@@ -102,13 +102,6 @@
                                         </state>
                                         <connections>
                                             <action selector="cekOngkosKirimPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fak-Cc-XAM"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXj-H4-1KH">
-                                        <rect key="frame" x="0.0" y="750.5" width="414" height="67.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="asdasd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VEH-vr-XMs"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -176,15 +176,18 @@ class ViewController: UIViewController , UITextFieldDelegate {
       
         ongkirManager.fetchCost(origin: originSelected, destination: destinationSelected, weight: self.gram, courier: self.kurirSelected)
         
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { // Change `2.0` to the desired number of seconds.
+           // Code you want to be delayed
+            self.performSegue(withIdentifier: "goToDetail", sender: self)
+
+        }
       
 
     }
     
-    @IBAction func asdasd(_ sender: Any) {
-        performSegue(withIdentifier: "goToDetail", sender: self)
+       
 
-    }
+    
     
   
     
