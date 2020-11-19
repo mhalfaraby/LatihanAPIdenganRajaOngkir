@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-
-
 struct Ongkir: Decodable {
     let rajaongkir: Result
 }

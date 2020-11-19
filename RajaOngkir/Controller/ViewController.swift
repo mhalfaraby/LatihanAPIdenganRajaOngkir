@@ -10,9 +10,8 @@ import DropDown
 import Keyboardy
 class ViewController: UIViewController , UITextFieldDelegate {
     
-    
-    
-    
+        //MARK: - Variable and Constant
+
     let provinsiAsal = DropDown()
     let provinsiTujuan = DropDown()
     let kotaAsal = DropDown()
@@ -39,6 +38,8 @@ class ViewController: UIViewController , UITextFieldDelegate {
     
     var hargaAkhir = [Costs]()
     
+        //MARK: - Outlet
+
     @IBOutlet weak var labelAsal: UILabel!
     @IBOutlet weak var labelTujuan: UILabel!
     
@@ -59,6 +60,8 @@ class ViewController: UIViewController , UITextFieldDelegate {
     
     @IBOutlet weak var keyboard: NSLayoutConstraint!
     
+        //MARK: - ViewDidLoad
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,7 +79,8 @@ class ViewController: UIViewController , UITextFieldDelegate {
         ongkirManager.delegate = self
         ongkirManager.fetch()
         
-        
+        //MARK: - Keyboard
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -102,19 +106,17 @@ class ViewController: UIViewController , UITextFieldDelegate {
             
         }
         
-        
+        //MARK: - Dropdown
+
     }
-    
-    
+ 
     @IBAction func pilihKotaPressed(_ sender: Any) {
         kotaAsal.show()
         kotaAsal.selectionAction = { [unowned self] (index: Int, item: String) in
             pilihKota.setTitle(item, for: .normal)
             
             originSelected = origin[index].city_id
-            
-            
-            
+  
         }
         
         
@@ -133,15 +135,13 @@ class ViewController: UIViewController , UITextFieldDelegate {
             
         }
     }
-    
-    
-    
+
     @IBAction func pilihKotaTujuanPressed(_ sender: Any) {
         kotaTujuan.show()
         kotaTujuan.selectionAction = { [unowned self] (index: Int, item: String) in
             pilihKotaTujuan.setTitle(item, for: .normal)
             destinationSelected = destination[index].city_id
-            
+        
         }
     }
     
@@ -159,67 +159,28 @@ class ViewController: UIViewController , UITextFieldDelegate {
         kurir.selectionAction = {  (index: Int, item: String) in
             self.pilihKurir.setTitle(item, for: .normal)
             self.kurirSelected = item.lowercased()
-            
-            
-            
+         
         }
         
     }
-    
-    
+    //MARK: - GoToDetail
+
+
     @IBAction func cekOngkosKirimPressed(_ sender: Any) {
         print(originSelected)
         print(destinationSelected)
         print(gram)
         print(kurirSelected)
-        
-        
         ongkirManager.fetchCost(origin: originSelected, destination: destinationSelected, weight: self.gram, courier: self.kurirSelected)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        //        DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) { // Change `2.0` to the desired number of seconds.
-        //            // Code you want to be delayed
-        
-        
-        //        }
-        
-        
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetail" {
             
             let destinationVC = segue.destination as! DetailViewController
             
             destinationVC.hargaAkhir2 = hargaAkhir
-            
-            
-            
-            
-            
-            
-            
-            
+   
         }
     }
     
@@ -301,6 +262,3 @@ extension ViewController: KeyboardStateDelegate {
         // keyboard animation finished
     }
 }
-
-
-

@@ -13,12 +13,10 @@ protocol OngkirManagerDelegate {
     func updateCity (ongkir: [Province2])
     func updateCityDestination (ongkir: [Province2])
     func updateCost (harga: [Costs])
-    
-    
+  
 }
 
 struct OngkirManager {
-    //    var provinsiAwalArray = [String]()
     var delegate: OngkirManagerDelegate?
     
     var dataKurir = ["JNE", "TIKI" , "POS"]
@@ -41,8 +39,6 @@ struct OngkirManager {
                 if let provinsi = parseJson(provinceData: safeData) {
                     
                     delegate?.updateProvince(ongkir: provinsi)
-                    
-                    
                 }
             }
             
@@ -182,14 +178,6 @@ struct OngkirManager {
             }; if let safeData = data {
                 if let harga = self.parseJsonCost(cityData: safeData) {
                     delegate?.updateCost(harga: harga)
-                    
-                    
-                    //                self.menyimpan(input: harga)
-                    
-                    
-                    
-                    
-                    
                 }
             }
             
@@ -214,10 +202,5 @@ struct OngkirManager {
         }
         return nil
     }
-    
-    
-    
-    
-    
-    
+  
 }
