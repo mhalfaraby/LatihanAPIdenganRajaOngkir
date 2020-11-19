@@ -54,8 +54,10 @@ extension DropDownCell {
 					self.backgroundColor = selectedBackgroundColor
                     self.optionLabel.textColor = self.highlightTextColor
 				} else {
+                    DispatchQueue.main.async {
 					self.backgroundColor = .clear
                     self.optionLabel.textColor = self.normalTextColor
+                    }
 				}
 			}
 		}

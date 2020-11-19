@@ -994,8 +994,9 @@ extension DropDown {
         if let selectedRowIndex = selectedRowIndices.firstIndex(where: { $0 == index  }) {
             selectedRowIndices.remove(at: selectedRowIndex)
         }
-
-		tableView.deselectRow(at: IndexPath(row: index, section: 0), animated: true)
+        DispatchQueue.main.async {
+            self.tableView.deselectRow(at: IndexPath(row: index, section: 0), animated: true)
+        }
 	}
     
     // de-selects the rows at the indices provided
@@ -1061,6 +1062,7 @@ extension DropDown: UITableViewDataSource, UITableViewDelegate {
 		if index >= 0 && index < localizationKeysDataSource.count {
 			cell.accessibilityIdentifier = localizationKeysDataSource[index]
 		}
+        
 		
 		cell.optionLabel.textColor = textColor
 		cell.optionLabel.font = textFont

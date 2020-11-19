@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
    
     
     var hargaAkhir2 = [Costs]()
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,18 +40,21 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDataSource {
     // jumlah table berdasarkan array struct
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // berapa jumlah tablenya
+            
         return hargaAkhir2[0].costs.count
+
     }
     // menampilkan cell nya sesuai array struct
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "reuseCell", for: indexPath) as? DetailTableViewCell {
             
-         
-            cell.namaKurir.text = String(hargaAkhir2[0].costs[indexPath.row].cost[0].value)
-            cell.namaCode.text = hargaAkhir2[0].code.uppercased()
-            cell.namaService.text = hargaAkhir2[0].costs[indexPath.row].service.uppercased()
+                cell.namaKurir.text = String(hargaAkhir2[0].costs[indexPath.row].cost[0].value)
+                cell.namaCode.text = hargaAkhir2[0].code.uppercased()
+                cell.namaService.text = hargaAkhir2[0].costs[indexPath.row].service.uppercased()
 
-                
+                    
+           
+       
             return cell
         } else {
             return UITableViewCell()

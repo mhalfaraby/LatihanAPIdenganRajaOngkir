@@ -176,11 +176,24 @@ class ViewController: UIViewController , UITextFieldDelegate {
         
         ongkirManager.fetchCost(origin: originSelected, destination: destinationSelected, weight: self.gram, courier: self.kurirSelected)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) { // Change `2.0` to the desired number of seconds.
-            // Code you want to be delayed
-            self.performSegue(withIdentifier: "goToDetail", sender: self)
-            
-        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) { // Change `2.0` to the desired number of seconds.
+        //            // Code you want to be delayed
+        
+        
+        //        }
         
         
     }
@@ -198,8 +211,14 @@ class ViewController: UIViewController , UITextFieldDelegate {
             
             let destinationVC = segue.destination as! DetailViewController
             
-            
             destinationVC.hargaAkhir2 = hargaAkhir
+            
+            
+            
+            
+            
+            
+            
             
         }
     }
@@ -209,9 +228,12 @@ class ViewController: UIViewController , UITextFieldDelegate {
 
 extension ViewController: OngkirManagerDelegate {
     func updateCost(harga: [Costs]) {
-        print(harga[0])
+        //        print(harga[0])
         hargaAkhir.removeAll()
         hargaAkhir.append(contentsOf: harga)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.performSegue(withIdentifier: "goToDetail", sender: self)
+        }
     }
     
     func updateProvince(ongkir: [Province]) {
