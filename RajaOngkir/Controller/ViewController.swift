@@ -192,7 +192,7 @@ extension ViewController: OngkirManagerDelegate {
         //        print(harga[0])
         hargaAkhir.removeAll()
         hargaAkhir.append(contentsOf: harga)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.async {
             self.performSegue(withIdentifier: "goToDetail", sender: self)
         }
     }
@@ -262,3 +262,6 @@ extension ViewController: KeyboardStateDelegate {
         // keyboard animation finished
     }
 }
+
+extension DropDownCell {
+    override open func awakeFromNib() { super.awakeFromNib(); optionLabel.textAlignment = .center } }
